@@ -6,9 +6,9 @@
 * 
 *  https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
 * 
-*  Name: Jhonatan Lopez Olguin Student ID: [YOUR STUDENT ID] Date: [TODAY'S DATE]
+*  Name: [YOUR FULL NAME] Student ID: [YOUR STUDENT ID] Date: [TODAY'S DATE]
 *
-*  Published URL on Vercel: [WILL BE FILLED AFTER DEPLOYMENT]
+*  Published URL on Vercel: https://your-actual-vercel-url.vercel.app
 *
 ********************************************************************************/
 
@@ -17,7 +17,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-const HTTP_PORT = process.env.PORT || 8080;
+const HTTP_PORT = process.env.PORT || 3000;
 
 // Import the sitesDB module
 const SitesDB = require("./modules/sitesDB.js");
@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
     res.json({
         message: "API Listening",
         term: "Summer 2025",
-        student: "Jhonatan Lopez Olguin"
+        student: "[YOUR FULL NAME HERE]"
     });
 });
 
@@ -115,10 +115,14 @@ app.delete('/api/sites/:id', (req, res) => {
 });
 
 // Initialize database connection and start server
+console.log('Starting server...');
+console.log('MongoDB connection string exists:', !!process.env.MONGODB_CONN_STRING);
+
 db.initialize(process.env.MONGODB_CONN_STRING).then(() => {
+    console.log('Database connected successfully');
     app.listen(HTTP_PORT, () => {
         console.log(`server listening on: ${HTTP_PORT}`);
     });
 }).catch((err) => {
-    console.log(err);
+    console.log('Database connection failed:', err);
 });
