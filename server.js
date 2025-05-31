@@ -6,7 +6,7 @@
 * 
 *  https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
 * 
-*  Name: Jhonatan Lopez Olguin Student ID: 147028237 Date: [TODAY'S DATE]
+*  Name: Jhonatan Lopez Olguin Student ID: 147028237 Date: 24th May 2025
 *
 *  Published URL on Vercel: https://web422as1-theta.vercel.app
 *
